@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Игра 1-12</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="setupScreen" class="screen active">
+        <div class="setup-box">
+            <h1>Кубики Бали</h1>
+            <p>Введите количество игроков (2-5):</p>
+            <input type="number" id="playerCount" value="2" min="2" max="5">
+            <br>
+            <button onclick="window.startGame()">Начать игру</button>
+        </div>
+    </div>
+
+    <div id="gameScreen" class="screen hidden">
+        <div class="game-container">
+            <h1 id="turnInfo"></h1>
+            
+            <div class="action-area">
+                <button id="rollBtn" onclick="window.rollDice()">Бросить кубики</button>
+                
+                <div id="choiceArea" class="hidden">
+                    <h2>Выпало: <span id="diceResult"></span></h2>
+                    <div class="choice-buttons">
+                        <button id="sepBtn" onclick="window.chooseSeparate()">По отдельности</button>
+                        <button id="sumBtn" onclick="window.chooseSum()">Сумма</button>
+                        <button id="skipBtn" onclick="window.skipTurn()">Пропустить</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="playersArea" class="players-area"></div>
+        </div>
+    </div>
+
+    <div id="winScreen" class="screen hidden">
+        <div class="win-box">
+            <h1 id="winMessage"></h1>
+            <button onclick="window.showSetup()">Играть еще</button>
+        </div>
+    </div>
+    
+    <script src="data.js"></script>
+    <script src="ui.js"></script>
+    <script src="logic.js"></script>
+</body>
+</html>

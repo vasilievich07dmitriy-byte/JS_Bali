@@ -1,0 +1,146 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f9;
+    color: #333;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.screen {
+    display: none;
+    min-height: 100vh;
+}
+
+.screen.active {
+    display: block;
+}
+
+#setupScreen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.setup-box {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+input[type="number"] {
+    padding: 10px;
+    font-size: 18px;
+    width: 100px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.game-container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.action-area {
+    margin: 20px 0;
+    min-height: 120px;
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    background: #4c8bf5;
+    color: white;
+    cursor: pointer;
+    margin: 5px;
+    transition: 0.2s;
+}
+
+button:hover { background: #3a70c4; }
+
+button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.hidden { display: none !important; }
+
+.players-area {
+    margin-top: 30px;
+}
+
+.players-even {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.players-odd {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.player-board {
+    padding: 20px;
+    border: 3px solid transparent;
+    border-radius: 12px;
+    transition: opacity 0.3s;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.players-odd .player-board {
+    width: 60%;
+}
+
+.player-board.active {
+    border-color: #4c8bf5;
+    background: #eef4ff;
+    opacity: 1;
+}
+
+.player-board.inactive {
+    opacity: 0.3;
+}
+
+.numbers {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin-top: 15px;
+    word-wrap: break-word;
+}
+
+.red-text {
+    color: #e53935;
+}
+
+#winScreen {
+    background: url('img/header1.gif') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.win-box {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 50px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.win-box h1 {
+    margin-top: 0;
+    font-size: 36px;
+    color: #e53935;
+}
